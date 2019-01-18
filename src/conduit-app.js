@@ -19,24 +19,24 @@ class ConduitApp extends PolymerElement {
       <style></style>
 
       <iron-ajax
-        auto=""
+        auto
         url="https://conduit.productionready.io/api/articles"
         handle-as="json"
         last-response="{{articlesResponse}}"
       ></iron-ajax>
       <iron-ajax
-        auto=""
+        auto
         url="https://conduit.productionready.io/api/tags"
         handle-as="json"
         last-response="{{tagsResponse}}"
       ></iron-ajax>
 
-      <app-location route="{{route}}" use-hash-as-path=""></app-location>
+      <app-location route="{{route}}" use-hash-as-path></app-location>
       <app-route
         route="{{route}}"
         pattern="/:page"
         data="{{routeData}}"
-        tail="{{subroute}}"
+        auto-activate
       ></app-route>
 
       <conduit-navbar></conduit-navbar>
@@ -84,7 +84,7 @@ class ConduitApp extends PolymerElement {
   }
 
   _routePageChanged(page) {
-    this.page = page || "home";
+    this.set("page", page || "home");
   }
 }
 

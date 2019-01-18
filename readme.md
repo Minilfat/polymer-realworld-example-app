@@ -26,6 +26,12 @@ First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polyme
 $ polymer serve
 ```
 
+To avoid access restriction (403) from Imgur's CDNs run with:
+
+```
+$ polymer serve --hostname 0.0.0.0
+```
+
 ## Building the application
 
 ```
